@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+				<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+				<title>Radar de Chuvas RJ</title>
+
+				<meta http-equiv="Permissions-Policy" content="interest-cohort=()">
+
+				<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+				<meta name="viewport" content="width=device-width, initial-scale=1">
+
+				<base href="./Radar/">
+
+				<link rel="icon" href="icon.png">
+
+				<link rel="stylesheet" href="RadarCustom_files/font-awesome.css">
+
+				<link rel="stylesheet" href="RadarCustom_files/bootstrap.min.css" id="bootstrapcss">
+
+				<script src="RadarCustom_files/jquery.min.js"></script>
+
+				<script src="RadarCustom_files/generic.js"></script>
+
+				<script>
+								// self-invoked wrapper for scoping the `document` variable
+								!function (d) {
+
+												if (!d.currentScript) {
+
+																let sheet = document.getElementById('bootstrapcss');
+																sheet.disabled = true;
+																sheet.parentNode.removeChild(sheet);
+
+																var s = d.createElement('script');
+																s.src = 'RadarCustom_files/bootstrap4.min.js';
+																d.head.appendChild(s);
+
+																s = d.createElement('link');
+																s.rel = 'stylesheet';
+																s.href = 'RadarCustom_files/bootstrap4.min.css';
+																d.head.appendChild(s);
+
+																s = d.createElement('style');
+																s.textContent = '.floating-dark-toogle { visibility: hidden !important; }';
+																d.head.appendChild(s);
+												}
+
+								}(document)
+				</script>
+
+				<link rel="stylesheet" href="RadarCustom_files/leaflet.css">
+
+				<link rel="stylesheet" href="RadarCustom_files/mapaRadar.css">
+
+				<link rel="stylesheet" href="RadarCustom_files/microtip.css">
+
+				<script src="https://unpkg.com/protomaps-leaflet@4.0.1/dist/protomaps-leaflet.js"></script>
+
+				<script src="RadarCustom_files/leaflet.js"></script>
+
+				<script src="RadarCustom_files/popper.min.js"></script>
+
+				<script src="RadarCustom_files/mapaRadar.js"></script>
+</head>
+
+<body>
+				<script>
+
+				</script>
+				<svg xmlns="http://www.w3.org/2000/svg" class="filters-svg">
+								<defs>
+												<filter id="reduce-red">
+																<feColorMatrix type="matrix" values="1 0 0 0 0  0 1.06 0 0 0  0 0 1.76 0 0  -2.2 -0.3 2.2 1 0"></feColorMatrix>
+												</filter>
+												<filter id="reduce-red-dark">
+																<feColorMatrix type="matrix" values="2.1 0 0 0 0  0 1.5 0 0 0  0 0 1.2 0 0  -1 0.1 0.2 1 0"></feColorMatrix>
+												</filter>
+								</defs>
+				</svg>
+
+				<div id="mapid"
+									class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom"
+									tabindex="0">
+				</div>
+
+</body>
+
+</html>

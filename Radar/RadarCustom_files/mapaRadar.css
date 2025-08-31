@@ -1,0 +1,301 @@
+:root {
+				--toolbar-height: 5vh;
+				--difference: calc(var(--toolbar-height) * 20);
+				--loadingpanel-width: calc((40vw + var(--difference)) / 4.7 );
+}
+
+.unseen-render {
+				max-width: 0px;
+				max-height: 0px;
+}
+
+.btn-toolbar {
+				min-height: var(--toolbar-height);
+				flex-wrap: nowrap;
+}
+
+.leaflet-container {
+				background-color: #fff !important;
+}
+
+.leaflet-tile {
+				/*filter: url(#reduce-red) hue-rotate(6deg) grayscale(0.1) contrast(1.1) brightness(0.5);*/
+}
+
+.nice-shadow {
+				text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black, 1px 0px 0 black, 0px 1px 0 black, -1px 0px 0 black, 0px -1px 0 black, 0px 0px 3px black;
+}
+
+img.leaflet-tile {
+				image-rendering: optimizeQuality;
+}
+
+.leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+				border: 2px solid #0d6efd !important;
+}
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out {
+				background-color: #0d6efd !important;
+				border-bottom-color: #0d6efd !important;
+				color: white !important;
+}
+
+.leaflet-container .leaflet-control-attribution {
+				background: rgba(255, 255, 255, 0);
+				text-shadow: 1px 1px 1px white;
+}
+
+.leaflet-right .leaflet-control {
+				margin-right: 8px;
+}
+
+.leaflet-bottom .leaflet-control {
+				margin-bottom: 10px;
+}
+
+.leaflet-control-attribution {
+				display: none;
+}
+
+.filters-svg {
+				height: 0;
+				width: 0;
+				position: absolute;
+				visibility: hidden;
+}
+
+#mapid {
+				position: relative;
+				outline: none;
+				height: 100%;
+				width: 100% !important;
+}
+
+.easeload {
+				opacity: 0;
+				-webkit-transition: all 0.5s ease;
+				-moz-transition: all 0.5s ease;
+				-ms-transition: all 0.5s ease;
+				-o-transition: all 0.5s ease;
+}
+
+.scandate {
+				position: relative;
+				max-width: 100%;
+				width: 100%;
+				overflow: hidden;
+}
+
+				.scandate > .loadingpainel {
+								position: relative;
+								height: 100%;
+								width: 100%;
+								max-width: 100%;
+								background-color: black;
+								z-index: 10000;
+				}
+
+								.scandate > .loadingpainel > .loading {
+												height: 26px;
+												width: 312px;
+												max-width: 98%;
+												position: absolute;
+												top: 50%;
+												-ms-transform: translateY(-50%);
+												transform: translateY(-50%);
+												object-fit: scale-down;
+								}
+
+				.scandate > .timepainel {
+								height: 100%;
+								width: 100%;
+								max-width: 100%;
+				}
+
+								.scandate > .timepainel > .timestampcanvas {
+												height: 26px;
+												width: 312px;
+												max-height: 100%;
+												max-width: 98%;
+												position: absolute;
+												top: 50%;
+												-ms-transform: translateY(-50%);
+												transform: translateY(-50%);
+								}
+
+.clearfix {
+				*zoom: 1;
+}
+
+				.clearfix:before,
+				.clearfix:after {
+								content: " ";
+								display: table;
+				}
+
+				.clearfix:after {
+								clear: both;
+				}
+
+.outer-div {
+				position: absolute;
+				bottom: 10px; /* Distance from the bottom of the viewport */
+				float: right;
+				right: 50%;
+}
+
+.inner-div {
+				position: relative;
+				float: right;
+				right: -50%;
+}
+
+/* Adjust for screens */
+@media (max-height: 720px) {
+				:root {
+								--toolbar-height: 7vh;
+				}
+}
+
+@media (max-height: 480px) {
+				:root {
+								--toolbar-height: 10vh;
+				}
+}
+
+html {
+				height: 100%
+}
+
+body {
+				height: 100%;
+				background: black !important;
+				display: flex;
+				flex-direction: column;
+}
+
+.btn {
+				border-radius: 0 !important;
+}
+
+.radar-colors {
+				filter: hue-rotate(0deg) saturate(1.2);
+}
+
+.leaflet-container img.leaflet-image-layer {
+				opacity: 0.66 !important;
+				filter: hue-rotate(0deg) saturate(1.2) !important;
+}
+
+.floating-legend {
+				position: absolute;
+				bottom: 5px; /* Distance from the bottom of the viewport */
+				left: 5px; /* Distance from the left side of the viewport */
+				width: auto; /* Set the width of the image */
+				height: 133px; /* Maintain aspect ratio */
+				max-height: 31vh;
+				z-index: 1000; /* Ensure it's above most other elements */
+}
+				.floating-legend div {
+								display: flex;
+								justify-content: center;
+								height: 100%;
+								width: 100%;
+				}
+				.floating-legend .radar-colors {
+								height: 100%;
+								width: 100%;
+				}
+
+.floating-dark-toogle {
+				position: absolute;
+				top: 45px; /* Distance from the bottom of the viewport */
+				right: 1px; /* Distance from the left side of the viewport */
+				z-index: 1001; /* Ensure it's above most other elements */
+}
+
+				.floating-dark-toogle i {
+								font-size: 18px;
+								color: white;
+				}
+
+.apisourcespainel {
+				display: flex;
+				flex-direction: column;
+				position: relative;
+				width: 100%; /* Set the width of the image */
+				height: auto; /* Maintain aspect ratio */
+				z-index: 1000; /* Ensure it's above most other elements */
+}
+
+				.apisourcespainel > .form-select {
+								display: block;
+								margin: auto;
+								width: auto;
+				}
+				.apisourcespainel button {
+								background-color: transparent;
+								border: 0px;
+								align-self: center;
+								color: orange;
+								font-size: 18px;
+				}
+				.apisourcespainel i {
+								align-self: center;
+				}
+
+[role~="tooltip"][data-microtip-position|="top"]::after {
+				max-width: 90vw;
+				min-width: 60vw;
+				display: inline;
+				white-space: pre-wrap !important;
+}
+
+[aria-label][role~="tooltip"]::after {
+				background-color: #0d6efd !important;
+}
+
+[role~="tooltip"][data-microtip-position|="top"]::before {
+				filter: invert(25%) sepia(76%) saturate(2653%) hue-rotate(211deg) brightness(106%) contrast(98%);
+}
+
+[role~="tooltip"][data-microtip-position|="bottom"]::before {
+				filter: invert(25%) sepia(76%) saturate(2653%) hue-rotate(211deg) brightness(106%) contrast(98%);
+}
+
+[role~="tooltip"][data-microtip-position="left"]::before {
+				filter: invert(25%) sepia(76%) saturate(2653%) hue-rotate(211deg) brightness(106%) contrast(98%);
+}
+
+[role~="tooltip"][data-microtip-position="right"]::before {
+				filter: invert(25%) sepia(76%) saturate(2653%) hue-rotate(211deg) brightness(106%) contrast(98%);
+}
+
+.leaflet-control-layers {
+				background: black !important;
+}
+
+.leaflet-control-layers-expanded {
+				background: black !important;
+}
+
+.leaflet-image-layer.leaflet-zoom-animated {
+				clip-path: circle(42.5% at 50% 50%);
+				border-top-left-radius: 50% 100%; /* Trash workaround for ie11 */
+}
+
+.leaflet-interactive {
+				stroke: #0b5ed7;
+}
+
+.form-select {
+				background-color: #fff3 !important;
+				border-width: medium;
+				border-color: #0b5ed799;
+				width: 95px !important;
+}
+
+				.form-select option {
+								background-color: #fff !important;
+				}
