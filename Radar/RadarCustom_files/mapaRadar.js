@@ -1,10 +1,10 @@
 $(document).ready(function () {
 
     //var layerOSM = L.tileLayer('https://mt.google.com/vt/lyrs=r&f=q&x={x}&y={y}&z={z}&s=Gal&apistyle=s.t%3A3|s.e%3Ag|p.v%3Aoff,s.t%3A3|s.e%3Al|p.v%3Aoff,s.t%3A2|s.e%3Al|p.v%3Aoff', {
-    var layerOSM = L.tileLayer('https://mt.google.com/vt/lyrs=r,traffic&f=q&x={x}&y={y}&z={z}&s=Gal&apistyle=s.t%3A3|s.e%3Al|p.v%3Aoff,s.t%3A2|s.e%3Al|p.v%3Aoff', {
-        attribution: '',
+    var layerOSM = L.tileLayer('https://mt.google.com/vt/lyrs=r,traffic&f=q&x={x}&y={y}&z={z}&s=Gal&apistyle=s.t%3A3|s.e%3Al|p.v%3Aoff,s.t%3A2|s.e%3Al|p.v%3Aoff&{time}', {
         minZoom: 10,
         maxZoom: 16,
+        time: getRand()
     });
 
     let defaultZoom = 11;
@@ -21,6 +21,17 @@ $(document).ready(function () {
     ).setView([-22.7499, -43.2699], defaultZoom);
 
     //Plota o controle de zoom canto inferior direito
-    L.control.zoom().setPosition('bottomright').addTo(mymap)
+    L.control.zoom().setPosition('bottomright').addTo(mymap);
 
+    function getRand() {
+        return Math.random(); 
+    }
+
+    var TIME = 1 * 60 * 1000;
+
+    setInterval(function () {
+        layerOSM.options.time = getRand();
+        //layerOSM.setParams({});
+        layerOSM.redraw();
+    }, TIME);
 });
